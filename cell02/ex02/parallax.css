@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.parallax {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.black-box {
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    
+    height: 100%;
+
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#image1 {
+    background-image: url('https://img.4gamers.com.tw/ckfinder-th/image2/auto/2023-11/Furina-Focalors-Genshin-Impact-231108-212519.png?versionId=nHRpe9P25ua5iqgGcaR3pMyF7WyXoO93');
+}
+
+#image2 {
+    background-image: url('https://img.4gamers.com.tw/ckfinder-th/image2/auto/2023-11/Furina-Genshin-Impact-Wallpaper-HD-451231413r1311231-231109-214640.png?versionId=HtB8ohqpA1ekA.JCi2gw5YLLbIb_95NA');
+}
