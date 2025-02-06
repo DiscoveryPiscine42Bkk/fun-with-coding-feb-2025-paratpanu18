@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" onclick="handleClick()" onmouseleave="handleLeave()"></div>
+    <script>
+        const INITIAL_SIZE = 200;
+        const colors = ['red', 'green', 'blue'];
+        let currentColorIndex = 0;
+
+        const handleClick = () => {
+            let balloon = document.querySelector('.balloon');
+            if (++currentColorIndex > colors.length - 1) {
+                currentColorIndex = 0;
+            }
+            balloon.style.backgroundColor = colors[currentColorIndex];
+            const currentWidth = window.getComputedStyle(balloon).width;
+            const currentHeight = window.getComputedStyle(balloon).height;
+
+            const newWidth = parseFloat(currentWidth) + 10 + 'px';
+            const newHeight = parseFloat(currentHeight) + 10 + 'px';
+
+            if (newWidth > '420px') {
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+                return;
+            }
+
+            balloon.style.width = newWidth;
+            balloon.style.height = newHeight;
+        }
+
+        const handleLeave = () => {
+            let balloon = document.querySelector('.balloon');
+            const currentWidth = window.getComputedStyle(balloon).width;
+            const currentHeight = window.getComputedStyle(balloon).height;
+
+            const newWidth = parseFloat(currentWidth) - 5 + 'px';
+            const newHeight = parseFloat(currentHeight) - 5 + 'px';
+
+            if (--currentColorIndex < 0) {
+                currentColorIndex = colors.length - 1;
+            }
+            balloon.style.backgroundColor = colors[currentColorIndex];
+            
+            if (newWidth < '200px') {
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+                return;
+            }
+
+            balloon.style.width = newWidth;
+            balloon.style.height = newHeight;
+        }
+
+
+    </script>
+</body>
+</html>
